@@ -1,21 +1,21 @@
 <?php
 
-########################################################################
-# Extension Manager/Repository config file for ext "indexedsearch_rendered_ttnews".
-#
-# Auto generated 24-09-2012 12:47
-#
-# Manual updates:
-# Only the data in the array - everything else is removed by next
-# writing. "version" and "dependencies" must not be touched!
-########################################################################
+/***************************************************************
+ * Extension Manager/Repository config file for ext "indexedsearch_rendered_ttnews".
+ *
+ * Auto generated 18-01-2013 09:03
+ *
+ * Manual updates:
+ * Only the data in the array - everything else is removed by next
+ * writing. "version" and "dependencies" must not be touched!
+ ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Render news content for IndexedSearch Crawler tt_news',
 	'description' => 'Renders the content-field for news before indexing it. Useful for f.e. rgnewsce.',
 	'category' => 'misc',
 	'shy' => 0,
-	'version' => '1.0.0',
+	'version' => '2.1.1',
 	'dependencies' => 'indexedsearch_ttnews_crawler',
 	'conflicts' => '',
 	'priority' => '',
@@ -39,10 +39,12 @@ $EM_CONF[$_EXTKEY] = array(
 		'conflicts' => array(
 		),
 		'suggests' => array(
-			'rgnewsce' => ''
+			'rgnewsce' => '',
 		),
 	),
-	'_md5_values_when_last_written' => 'a:6:{s:8:"TODO.txt";s:4:"953a";s:13:"changelog.txt";s:4:"34ba";s:17:"ext_localconf.php";s:4:"98b4";s:14:"ext_tables.php";s:4:"b94d";s:14:"ext_tables.sql";s:4:"3146";s:44:"hooks/class.tx_indexedsearch_newscrawler.php";s:4:"c4f8";}',
+	'_md5_values_when_last_written' => 'a:5:{s:12:"ext_icon.gif";s:4:"c96c";s:17:"ext_localconf.php";s:4:"26d4";s:14:"doc/manual.pdf";s:4:"c1f6";s:14:"doc/manual.sxw";s:4:"512f";s:48:"hooks/class.tx_indexedsearch_rendered_ttnews.php";s:4:"f6f4";}',
 	'suggests' => array(
 	),
 );
+
+?>
