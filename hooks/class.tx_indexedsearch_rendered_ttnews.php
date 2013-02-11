@@ -1,5 +1,11 @@
 <?php
 
+// Special adjustments for rgnewsce because it's class is just loaded if this is TYPO3-frontend.
+if (t3lib_extMgm::isLoaded('rgnewsce')) {
+    require_once(t3lib_extMgm::extPath('rgnewsce').'class.tx_rgnewsce_fe.php');
+    require_once(t3lib_extMgm::extPath('css_styled_content').'pi1/class.tx_cssstyledcontent_pi1.php');
+}
+
 class tx_indexedsearch_rendered_ttnews {
 
 	/**
