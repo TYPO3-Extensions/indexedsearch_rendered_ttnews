@@ -33,10 +33,25 @@ class tx_indexedsearch_rendered_ttnews {
 		// Don't render images here!
 		unset($localRecord['image']);
 
+        $k = false;
+        // The extension newsreadedcount is known to use an instance of fe_user and it would count the news-read value up every time the article is indexed ...
+        if (t3lib_extMgm::isLoaded('newsreadedcount')
+            && false !== ($k =
+                array_search('EXT:newsreadedcount/pi1/class.tx_newsreadedcount_pi1.php:tx_newsreadedcount_pi1',
+                    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_news']['extraItemMarkerHook']))
+        ) {
+            unset($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_news']['extraItemMarkerHook'][$k]);
+        }
+
 		// Render markers for single-view
 		$markerArray = $tt_news->getItemMarkerArray(
             $localRecord,
 			$tt_news->conf['displaySingle.']);
+
+        // Add the settings back, so we don't leave a gap here.
+        if (t3lib_extMgm::isLoaded('newsreadedcount') && $k !== false) {
+            $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_news']['extraItemMarkerHook'][$k] = 'EXT:newsreadedcount/pi1/class.tx_newsreadedcount_pi1.php:tx_newsreadedcount_pi1';
+        }
 
 		// Replace the row's body-text by it's rendered value
 		$r['bodytext'] = $markerArray['###NEWS_CONTENT###'];
