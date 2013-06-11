@@ -27,11 +27,9 @@ class tx_indexedsearch_rendered_ttnews {
 		// Disable caching, as this is not a normal page-rendering process
 		$tt_news->allowCaching = false;
 
-		// Create local copy of the record
-		$localRecord = $r;
-
-		// Don't render images here!
-		unset($localRecord['image']);
+		// Disable all extensions for image-generation. This prevents any image-generation and works around a bug with FAL :)
+		$imageExtensions = $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'];
+		$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'] = "";
 
         $k = false;
         // The extension newsreadedcount is known to use an instance of fe_user and it would count the news-read value up every time the article is indexed ...
@@ -45,13 +43,16 @@ class tx_indexedsearch_rendered_ttnews {
 
 		// Render markers for single-view
 		$markerArray = $tt_news->getItemMarkerArray(
-            $localRecord,
+			$r,
 			$tt_news->conf['displaySingle.']);
 
         // Add the settings back, so we don't leave a gap here.
         if (t3lib_extMgm::isLoaded('newsreadedcount') && $k !== false) {
             $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_news']['extraItemMarkerHook'][$k] = 'EXT:newsreadedcount/pi1/class.tx_newsreadedcount_pi1.php:tx_newsreadedcount_pi1';
         }
+
+		// Restore value for allowed image file-extensions
+		$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'] = $imageExtensions;
 
 		// Replace the row's body-text by it's rendered value
 		$r['bodytext'] = $markerArray['###NEWS_CONTENT###'];
