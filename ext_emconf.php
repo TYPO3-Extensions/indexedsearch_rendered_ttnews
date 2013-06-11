@@ -3,7 +3,7 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "indexedsearch_rendered_ttnews".
  *
- * Auto generated 29-05-2013 07:27
+ * Auto generated 11-06-2013 19:17
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Renders the content-field for news before indexing it. Useful for f.e. rgnewsce.',
 	'category' => 'misc',
 	'shy' => 0,
-	'version' => '2.1.5',
+	'version' => '2.1.6',
 	'dependencies' => 'indexedsearch_ttnews_crawler',
 	'conflicts' => '',
 	'priority' => '',
@@ -43,7 +43,7 @@ $EM_CONF[$_EXTKEY] = array(
 			'rgnewsce' => '',
 		),
 	),
-	'_md5_values_when_last_written' => 'a:5:{s:12:"ext_icon.gif";s:4:"c96c";s:17:"ext_localconf.php";s:4:"cd66";s:14:"doc/manual.pdf";s:4:"9ca5";s:14:"doc/manual.sxw";s:4:"7f68";s:48:"hooks/class.tx_indexedsearch_rendered_ttnews.php";s:4:"dc81";}',
+	'_md5_values_when_last_written' => 'a:5:{s:12:"ext_icon.gif";s:4:"c96c";s:17:"ext_localconf.php";s:4:"cd66";s:14:"doc/manual.pdf";s:4:"1cfa";s:14:"doc/manual.sxw";s:4:"1a7a";s:48:"hooks/class.tx_indexedsearch_rendered_ttnews.php";s:4:"ea85";}',
 	'suggests' => array(
 	),
 );
