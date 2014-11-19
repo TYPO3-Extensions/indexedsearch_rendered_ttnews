@@ -3,48 +3,46 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "indexedsearch_rendered_ttnews".
  *
- * Auto generated 11-06-2013 19:17
+ * Auto generated 19-11-2014 12:33
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
  * writing. "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = array (
 	'title' => 'Render news content for IndexedSearch Crawler tt_news',
 	'description' => 'Renders the content-field for news before indexing it. Useful for f.e. rgnewsce.',
 	'category' => 'misc',
-	'shy' => 0,
-	'version' => '2.1.6',
-	'dependencies' => 'indexedsearch_ttnews_crawler',
+	'shy' => false,
+	'version' => '2.1.7',
+	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
 	'loadOrder' => '',
 	'module' => '',
 	'state' => 'stable',
-	'uploadfolder' => 0,
+	'uploadfolder' => false,
 	'createDirs' => '',
 	'modify_tables' => '',
-	'clearcacheonload' => 0,
+	'clearcacheonload' => false,
 	'lockType' => '',
 	'author' => 'Simon Schick',
 	'author_email' => 'simonsimcity@gmail.com',
 	'author_company' => '',
-	'CGLcompliance' => '',
-	'CGLcompliance_note' => '',
-	'constraints' => array(
-		'depends' => array(
-			'typo3' => '4.5.0-6.1.99',
-			'indexedsearch_ttnews_crawler' => '',
+	'CGLcompliance' => NULL,
+	'CGLcompliance_note' => NULL,
+	'constraints' => 
+	array (
+		'depends' => 
+		array (
 		),
-		'conflicts' => array(
+		'conflicts' => 
+		array (
 		),
-		'suggests' => array(
-			'rgnewsce' => '',
+		'suggests' => 
+		array (
 		),
-	),
-	'_md5_values_when_last_written' => 'a:5:{s:12:"ext_icon.gif";s:4:"c96c";s:17:"ext_localconf.php";s:4:"cd66";s:14:"doc/manual.pdf";s:4:"1cfa";s:14:"doc/manual.sxw";s:4:"1a7a";s:48:"hooks/class.tx_indexedsearch_rendered_ttnews.php";s:4:"ea85";}',
-	'suggests' => array(
 	),
 );
 

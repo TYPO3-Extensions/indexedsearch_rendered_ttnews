@@ -27,6 +27,9 @@ class tx_indexedsearch_rendered_ttnews {
 		// Disable caching, as this is not a normal page-rendering process
 		$tt_news->allowCaching = false;
 
+		// Disable custom image-marker rendering, used f.e. by perfectlightbox ...
+		unset($tt_news->conf['imageMarkerFunc']);
+
 		// Disable all extensions for image-generation. This prevents any image-generation and works around a bug with FAL :)
 		$imageExtensions = $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'];
 		$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'] = "";
